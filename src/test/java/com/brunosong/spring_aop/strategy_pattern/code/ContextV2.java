@@ -3,16 +3,9 @@ package com.brunosong.spring_aop.strategy_pattern.code;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ContextV1 {
+public class ContextV2 {
 
-    private final Strategy strategy;
-
-    public ContextV1(Strategy strategy) {
-        this.strategy = strategy;
-    }
-
-    public void execute() {
-
+    public void execute(Strategy strategy) {
         Long startTime = System.currentTimeMillis();
 
         //비즈니스 로직 시작
@@ -21,7 +14,6 @@ public class ContextV1 {
 
         Long endTime = System.currentTimeMillis();
         log.info("time is {}", endTime - startTime);
-
     }
 
 }
